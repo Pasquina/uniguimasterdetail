@@ -6,7 +6,7 @@ uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics,
   Controls, Forms, uniGUITypes, uniGUIAbstractClasses,
   uniGUIClasses, uniGUIRegClasses, uniGUIForm, uniDBNavigator, uniPanel,
-  uniGUIBaseClasses, uniBasicGrid, uniDBGrid, uniLabel;
+  uniGUIBaseClasses, uniBasicGrid, uniDBGrid, uniLabel, uniButton;
 
 type
   TMainForm = class(TUniForm)
@@ -26,6 +26,10 @@ type
     UniLabel1: TUniLabel;
     UniLabel2: TUniLabel;
     UniLabel3: TUniLabel;
+    UniButton1: TUniButton;
+    UniButton2: TUniButton;
+    procedure UniButton1Click(Sender: TObject);
+    procedure UniButton2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -44,6 +48,16 @@ uses
 function MainForm: TMainForm;
 begin
   Result := TMainForm(UniMainModule.GetFormInstance(TMainForm));
+end;
+
+procedure TMainForm.UniButton1Click(Sender: TObject);
+begin
+  UniMainModule.SaveData;
+end;
+
+procedure TMainForm.UniButton2Click(Sender: TObject);
+begin
+  UniMainModule.LoadData;
 end;
 
 initialization

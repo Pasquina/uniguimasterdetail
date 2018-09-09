@@ -3,9 +3,6 @@
         <ProjectGuid>{9C57BEED-0951-4BB5-8C00-C7C3370912AB}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\DBDemo\DBDemo.dproj">
-            <Dependencies/>
-        </Projects>
         <Projects Include="uniguimasterdetail.dproj">
             <Dependencies/>
         </Projects>
@@ -17,15 +14,6 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="DBDemo">
-        <MSBuild Projects="C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\DBDemo\DBDemo.dproj"/>
-    </Target>
-    <Target Name="DBDemo:Clean">
-        <MSBuild Projects="C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\DBDemo\DBDemo.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="DBDemo:Make">
-        <MSBuild Projects="C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\DBDemo\DBDemo.dproj" Targets="Make"/>
-    </Target>
     <Target Name="uniguimasterdetail">
         <MSBuild Projects="uniguimasterdetail.dproj"/>
     </Target>
@@ -36,13 +24,13 @@
         <MSBuild Projects="uniguimasterdetail.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="DBDemo;uniguimasterdetail"/>
+        <CallTarget Targets="uniguimasterdetail"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="DBDemo:Clean;uniguimasterdetail:Clean"/>
+        <CallTarget Targets="uniguimasterdetail:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="DBDemo:Make;uniguimasterdetail:Make"/>
+        <CallTarget Targets="uniguimasterdetail:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

@@ -26,7 +26,7 @@ object MainForm: TMainForm
     object UniContainerPanel1: TUniContainerPanel
       Left = 24
       Top = 3
-      Width = 481
+      Width = 713
       Height = 38
       Hint = ''
       ParentColor = False
@@ -50,13 +50,43 @@ object MainForm: TMainForm
         LayoutConfig.Margin = '0 10'
       end
       object UniDBNavigator1: TUniDBNavigator
-        Left = 168
-        Top = 3
+        Left = 104
+        Top = 11
         Width = 241
         Height = 25
         Hint = ''
         DataSource = UniMainModule.DataSource1
         TabOrder = 1
+      end
+      object UniButton1: TUniButton
+        Left = 400
+        Top = 10
+        Width = 75
+        Height = 25
+        Hint = ''
+        Caption = 'Save Data'
+        ParentFont = False
+        Font.Height = -13
+        Font.Style = [fsBold]
+        TabOrder = 3
+        LayoutConfig.Width = '100'
+        LayoutConfig.Margin = '0 5 0 10'
+        OnClick = UniButton1Click
+      end
+      object UniButton2: TUniButton
+        Left = 512
+        Top = 3
+        Width = 75
+        Height = 25
+        Hint = ''
+        Caption = 'Load Data'
+        ParentFont = False
+        Font.Height = -13
+        Font.Style = [fsBold]
+        TabOrder = 4
+        LayoutConfig.Width = '100'
+        LayoutConfig.Margin = '0 0 0 5'
+        OnClick = UniButton2Click
       end
     end
     object UniDBGrid1: TUniDBGrid

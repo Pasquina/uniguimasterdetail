@@ -25,6 +25,8 @@ type
     { Private declarations }
   public
     { Public declarations }
+    procedure SaveData;
+    procedure LoadData;
   end;
 
 function UniMainModule: TUniMainModule;
@@ -39,6 +41,23 @@ uses
 function UniMainModule: TUniMainModule;
 begin
   Result := TUniMainModule(UniApplication.UniMainModule)
+end;
+
+{ TUniMainModule }
+
+procedure TUniMainModule.LoadData;
+begin
+  FDMemTable1.LoadFromFile('../../uniMaster.xml');
+  FDMemTable2.LoadFromFile('../../uniDetailA.xml');
+  FDMemTable3.LoadFromFile('../../uniDetailB.xml');
+  FDMemTable1.Refresh;
+end;
+
+procedure TUniMainModule.SaveData;
+begin
+  FDMemTable1.SaveToFile('../../uniMaster.xml');
+  FDMemTable2.SaveToFile('../../uniDetailA.xml');
+  FDMemTable3.SaveToFile('../../uniDetailB.xml');
 end;
 
 initialization
