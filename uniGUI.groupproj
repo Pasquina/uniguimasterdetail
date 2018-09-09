@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{9C57BEED-0951-4BB5-8C00-C7C3370912AB}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\DBDemo\DBDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="uniguimasterdetail.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DBDemo">
+        <MSBuild Projects="C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\DBDemo\DBDemo.dproj"/>
+    </Target>
+    <Target Name="DBDemo:Clean">
+        <MSBuild Projects="C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\DBDemo\DBDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DBDemo:Make">
+        <MSBuild Projects="C:\Program Files (x86)\FMSoft\Framework\uniGUI\Demos\Desktop\DBDemo\DBDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="uniguimasterdetail">
+        <MSBuild Projects="uniguimasterdetail.dproj"/>
+    </Target>
+    <Target Name="uniguimasterdetail:Clean">
+        <MSBuild Projects="uniguimasterdetail.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="uniguimasterdetail:Make">
+        <MSBuild Projects="uniguimasterdetail.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DBDemo;uniguimasterdetail"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DBDemo:Clean;uniguimasterdetail:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DBDemo:Make;uniguimasterdetail:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
